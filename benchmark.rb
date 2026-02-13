@@ -90,12 +90,12 @@ Benchmark.bm(20) do |x|
 end
 
 # # Test 6: Dates (SKIPPED - segfault issue with Date objects)
-# puts "\n6. Date objects (1,000 dates):"
-# start_date = Date.new(2024, 1, 1)
-# dates_array = (0...1000).map { |i| start_date + i }
-# Benchmark.bm(20) do |x|
-#   x.report("C extension (dates):") { 10.times { dates_array.group_monotonic } }
-# end
+puts "\n6. Date objects (1,000 dates):"
+start_date = Date.new(2024, 1, 1)
+dates_array = (0...1000).map { |i| start_date + i }
+Benchmark.bm(20) do |x|
+  x.report("C extension (dates):") { 10.times { dates_array.group_monotonic } }
+end
 
 puts "\n" + "=" * 60
 puts "Benchmark complete!"
