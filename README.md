@@ -43,15 +43,15 @@ require 'monotonic_grouper'
 
 # Basic integer usage
 [1, 2, 3, 4, 5, 10, 11, 12].group_monotonic(3)
-# => [2..5, 10..12]
+# => [1..5, 10..12]
 
 # With singles (sequences shorter than min_range_size)
 [1, 2, 3, 4, 7, 9, 10, 11, 12].group_monotonic(3)
-# => [2..4, 7, 9, 10..12]
+# => [1..4, 7, 9, 10..12]
 
 # Custom minimum range size
 [1, 2, 3, 5, 6, 8].group_monotonic(2)
-# => [2..3, 5..6, 8]
+# => [1..3, 5..6, 8]
 
 # Works with Dates
 require 'date'
@@ -64,12 +64,12 @@ dates = [
   Date.new(2024, 1, 7)
 ]
 dates.group_monotonic(3)
-# => [Date.new(2024, 1, 2)..Date.new(2024, 1, 3), 
+# => [Date.new(2024, 1, 1)..Date.new(2024, 1, 3), 
 #     Date.new(2024, 1, 5)..Date.new(2024, 1, 7)]
 
 # Works with characters
 ['a', 'b', 'c', 'd', 'f', 'g', 'h'].group_monotonic(3)
-# => ['b'..'d', 'f'..'h']
+# => ['a'..'d', 'f'..'h']
 ```
 
 ## API
