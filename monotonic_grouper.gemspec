@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "monotonic_grouper"
-  spec.version       = "1.0.2"
+  spec.version       = "1.0.3"
   spec.authors       = ["Roman Hajdarov"]
   spec.email         = ["romnhajdarov@gmail.com"]
 
