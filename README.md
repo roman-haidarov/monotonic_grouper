@@ -9,6 +9,19 @@ Fast C extension for grouping monotonic sequences in Ruby arrays. Groups consecu
 - 📅 **Multiple Types**: Integers, Dates, Characters, and more
 - 🎯 **Configurable**: Adjustable minimum range size
 - 💎 **Ruby-friendly**: Seamless integration as Array method
+- 🚀 **Optimized Date Processing**: Special fast path for Date objects with cached Julian Day calculations
+
+## Recent Updates (v1.0.2)
+
+### Bug Fixes
+- **Critical**: Fixed first element being incorrectly skipped in all processing paths
+- Fixed loop initialization bug that caused incorrect grouping results
+
+### Performance Improvements
+- **2x faster Date processing**: Optimized by caching Julian Day Numbers (only 1 Ruby call per iteration instead of 2)
+- Faster array access using `RARRAY_AREF` macro
+- Better memory preallocation
+- Improved Date subclass handling (DateTime, custom Date classes)
 
 ## Installation
 
